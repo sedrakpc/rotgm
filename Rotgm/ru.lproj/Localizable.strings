@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Rotgm
+
+  Created by Sedrak Dalaloyan on 3/2/14.
+  Copyright (c) 2014 sedrakpc. All rights reserved.
+*/
+"SEARCH_VC_TITLE" = "Поиск остановки или маршрута";
+"FAVOURITES_VC_TITLE" = "Избранное";
+"AVTO" = "Автобус";
+"TROL" = "Троллейбус";
+"TRAM" = "Трамвай";

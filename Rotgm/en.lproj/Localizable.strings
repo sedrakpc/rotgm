@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Rotgm
+
+  Created by Sedrak Dalaloyan on 3/2/14.
+  Copyright (c) 2014 sedrakpc. All rights reserved.
+*/
+"SEARCH_VC_TITLE" = "Search";
+"FAVOURITES_VC_TITLE" = "Favourites";
+"AVTO" = "Bus";
+"TROL" = "Trolleybus";
+"TRAM" = "Tram";

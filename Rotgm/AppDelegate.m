@@ -7,19 +7,44 @@
 //
 
 #import "AppDelegate.h"
+#import "SearchViewController.h"
+#import "FavouritesViewController.h"
+#import "Constants.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //self.window.tintColor = DEFAULT_TINT_COLOR;
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    //tabBarController.tabBar.translucent = NO;
+    SearchViewController *searchVC = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
+    UINavigationController *searchNavController = [[UINavigationController alloc] initWithRootViewController:searchVC];
+    searchNavController.navigationBar.translucent = NO;
+    searchNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:1];
+    //searchNavController.edgesForExtendedLayout = UIRectEdgeNone;
+    //searchNavController.automaticallyAdjustsScrollViewInsets = NO;
+    //navController.navigationBar.barTintColor = DEFAULT_TINT_COLOR;
+    //[[UILabel appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor redColor]];
+
+    
+    FavouritesViewController *favouritesVC = [[FavouritesViewController alloc] initWithNibName:@"FavouritesViewController" bundle:nil];
+    UINavigationController *favouritesNavController = [[UINavigationController alloc] initWithRootViewController:favouritesVC];
+    favouritesNavController.navigationBar.translucent = NO;
+    favouritesNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:0];
+    
+    
+    tabBarController.viewControllers = @[favouritesNavController, searchNavController];
+    tabBarController.selectedIndex = 1;
+    self.window.rootViewController = tabBarController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
