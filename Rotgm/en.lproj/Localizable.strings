@@ -7,6 +7,7 @@
 */
 "SEARCH_VC_TITLE" = "Search";
 "FAVOURITES_VC_TITLE" = "Favourites";
+"STOP_VC_TITLE" = "Select stop";
 "AVTO" = "Bus";
 "TROL" = "Trolleybus";
 "TRAM" = "Tram";

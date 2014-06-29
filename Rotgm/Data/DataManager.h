@@ -16,6 +16,7 @@
 + (DataManager*)dataManager;
 - (NSArray *)allData;
 -(NSArray *)routesList;
+-(NSArray *)routeStops:(int)routeId;
 -(NSArray *)routesByName:(NSString *)name andType:(NSString *) type;
 
 @end

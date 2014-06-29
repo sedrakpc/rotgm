@@ -25,6 +25,8 @@
 		D14A765418B76BC800336B5A /* RotgmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D14A765318B76BC800336B5A /* RotgmTests.m */; };
 		D14A766318B77AD400336B5A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D14A766118B77AD400336B5A /* SearchViewController.m */; };
 		D14A766418B77AD400336B5A /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D14A766218B77AD400336B5A /* SearchViewController.xib */; };
+		D180CA011955EA0300DC2ED3 /* StopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D180C9FF1955EA0300DC2ED3 /* StopViewController.m */; };
+		D180CA021955EA0300DC2ED3 /* StopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D180CA001955EA0300DC2ED3 /* StopViewController.xib */; };
 		D189FC64191EB5AC004881CE /* DirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D189FC62191EB5AC004881CE /* DirectionViewController.m */; };
 		D189FC65191EB5AC004881CE /* DirectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D189FC63191EB5AC004881CE /* DirectionViewController.xib */; };
 		D189FC68191EBB9E004881CE /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D189FC67191EBB9E004881CE /* Utils.m */; };
@@ -36,6 +38,8 @@
 		D1BE96451916A14400FDFFA8 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE963E1916A14400FDFFA8 /* FMDatabaseQueue.m */; };
 		D1BE96461916A14400FDFFA8 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE96411916A14400FDFFA8 /* FMResultSet.m */; };
 		D1BE964A1916DEC100FDFFA8 /* RtRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE96491916DEC100FDFFA8 /* RtRoute.m */; };
+		D1C874CF19605F95002DB6FB /* TimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C874CD19605F95002DB6FB /* TimeTableViewController.m */; };
+		D1C874D019605F95002DB6FB /* TimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C874CE19605F95002DB6FB /* TimeTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,9 @@
 		D14A766018B77AD400336B5A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Search/SearchViewController.h; sourceTree = "<group>"; };
 		D14A766118B77AD400336B5A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Search/SearchViewController.m; sourceTree = "<group>"; };
 		D14A766218B77AD400336B5A /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Search/SearchViewController.xib; sourceTree = "<group>"; };
+		D180C9FE1955EA0300DC2ED3 /* StopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopViewController.h; path = Search/StopViewController.h; sourceTree = "<group>"; };
+		D180C9FF1955EA0300DC2ED3 /* StopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopViewController.m; path = Search/StopViewController.m; sourceTree = "<group>"; };
+		D180CA001955EA0300DC2ED3 /* StopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StopViewController.xib; path = Search/StopViewController.xib; sourceTree = "<group>"; };
 		D189FC61191EB5AC004881CE /* DirectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionViewController.h; path = Search/DirectionViewController.h; sourceTree = "<group>"; };
 		D189FC62191EB5AC004881CE /* DirectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionViewController.m; path = Search/DirectionViewController.m; sourceTree = "<group>"; };
 		D189FC63191EB5AC004881CE /* DirectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionViewController.xib; path = Search/DirectionViewController.xib; sourceTree = "<group>"; };
@@ -98,6 +105,9 @@
 		D1BE96411916A14400FDFFA8 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = FMDB/FMResultSet.m; sourceTree = "<group>"; };
 		D1BE96481916DEC100FDFFA8 /* RtRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RtRoute.h; path = Model/RtRoute.h; sourceTree = "<group>"; };
 		D1BE96491916DEC100FDFFA8 /* RtRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RtRoute.m; path = Model/RtRoute.m; sourceTree = "<group>"; };
+		D1C874CC19605F95002DB6FB /* TimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeTableViewController.h; path = Search/TimeTableViewController.h; sourceTree = "<group>"; };
+		D1C874CD19605F95002DB6FB /* TimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeTableViewController.m; path = Search/TimeTableViewController.m; sourceTree = "<group>"; };
+		D1C874CE19605F95002DB6FB /* TimeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimeTableViewController.xib; path = Search/TimeTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +259,12 @@
 				D189FC61191EB5AC004881CE /* DirectionViewController.h */,
 				D189FC62191EB5AC004881CE /* DirectionViewController.m */,
 				D189FC63191EB5AC004881CE /* DirectionViewController.xib */,
+				D180C9FE1955EA0300DC2ED3 /* StopViewController.h */,
+				D180C9FF1955EA0300DC2ED3 /* StopViewController.m */,
+				D180CA001955EA0300DC2ED3 /* StopViewController.xib */,
+				D1C874CC19605F95002DB6FB /* TimeTableViewController.h */,
+				D1C874CD19605F95002DB6FB /* TimeTableViewController.m */,
+				D1C874CE19605F95002DB6FB /* TimeTableViewController.xib */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -366,7 +382,9 @@
 				D134BEC118C3897500DD994C /* FavouritesViewController.xib in Resources */,
 				D134BEB518C3785B00DD994C /* Localizable.strings in Resources */,
 				D1BE963519169F9700FDFFA8 /* rotgm.sqlite in Resources */,
+				D180CA021955EA0300DC2ED3 /* StopViewController.xib in Resources */,
 				D14A763318B76BC800336B5A /* InfoPlist.strings in Resources */,
+				D1C874D019605F95002DB6FB /* TimeTableViewController.xib in Resources */,
 				D189FC65191EB5AC004881CE /* DirectionViewController.xib in Resources */,
 				D14A766418B77AD400336B5A /* SearchViewController.xib in Resources */,
 			);
@@ -395,6 +413,8 @@
 				D189FC64191EB5AC004881CE /* DirectionViewController.m in Sources */,
 				D1BE96421916A14400FDFFA8 /* FMDatabase.m in Sources */,
 				D1BE96461916A14400FDFFA8 /* FMResultSet.m in Sources */,
+				D180CA011955EA0300DC2ED3 /* StopViewController.m in Sources */,
+				D1C874CF19605F95002DB6FB /* TimeTableViewController.m in Sources */,
 				D14A766318B77AD400336B5A /* SearchViewController.m in Sources */,
 				D1BE96441916A14400FDFFA8 /* FMDatabasePool.m in Sources */,
 				D1BE96431916A14400FDFFA8 /* FMDatabaseAdditions.m in Sources */,

@@ -36,9 +36,12 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"SEARCH_VC_TITLE", nil);
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    [self setAutomaticallyAdjustsScrollViewInsets:YES];
-    [self setExtendedLayoutIncludesOpaqueBars:YES];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]){
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
+    //[self setAutomaticallyAdjustsScrollViewInsets:YES];
+    //[self setExtendedLayoutIncludesOpaqueBars:YES];
     
     //searchBar.barTintColor = [UIColor orangeColor];
     //searchBar.tintColor = [UIColor greenColor];

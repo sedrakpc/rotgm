@@ -17,7 +17,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     //self.window.tintColor = DEFAULT_TINT_COLOR;
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    //UITabBarController *tabBarController = [[UITabBarController alloc] init];
     //tabBarController.tabBar.translucent = NO;
     SearchViewController *searchVC = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
     UINavigationController *searchNavController = [[UINavigationController alloc] initWithRootViewController:searchVC];
@@ -29,15 +29,15 @@
     //[[UILabel appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor redColor]];
 
     
-    FavouritesViewController *favouritesVC = [[FavouritesViewController alloc] initWithNibName:@"FavouritesViewController" bundle:nil];
-    UINavigationController *favouritesNavController = [[UINavigationController alloc] initWithRootViewController:favouritesVC];
-    favouritesNavController.navigationBar.translucent = NO;
-    favouritesNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:0];
+    //FavouritesViewController *favouritesVC = [[FavouritesViewController alloc] initWithNibName:@"FavouritesViewController" bundle:nil];
+//    UINavigationController *favouritesNavController = [[UINavigationController alloc] initWithRootViewController:favouritesVC];
+    //favouritesNavController.navigationBar.translucent = NO;
+    //favouritesNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:0];
     
     
-    tabBarController.viewControllers = @[favouritesNavController, searchNavController];
-    tabBarController.selectedIndex = 1;
-    self.window.rootViewController = tabBarController;
+    //tabBarController.viewControllers = @[favouritesNavController, searchNavController];
+    //tabBarController.selectedIndex = 1;
+    self.window.rootViewController = searchNavController;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -96,4 +96,20 @@ static DataManager *manager;
     return result;
 }
 
+-(NSArray *)routeStops:(int)routeId {
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    FMResultSet *rs = [db executeQuery:@"select rtrs.[route], rtrs.[stop], st.[name], rtrs.[waypoint] from rt_route_stop as rtrs inner join rt_stop as st on rtrs.[stop] = st.[id] where rtrs.[route] = ? order by rtrs.waypoint asc", [NSNumber numberWithInt:routeId]];
+    if ([db hadError]) {
+        NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
+    }
+    while ([rs next]) {
+        RtStop *stop = [[RtStop alloc] init];
+        stop.stopId = [rs intForColumnIndex:1];
+        stop.name = [rs stringForColumnIndex:2];
+        [result addObject:stop];
+    }
+    [rs close];
+    return result;
+}
+
 @end

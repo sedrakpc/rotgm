@@ -1,21 +1,21 @@
 //
-//  DirectionViewController.m
+//  StopViewController.m
 //  Rotgm
 //
-//  Created by Sedrak Dalaloyan on 5/10/14.
+//  Created by Sedrak Dalaloyan on 6/21/14.
 //  Copyright (c) 2014 sedrakpc. All rights reserved.
 //
 
-#import "DirectionViewController.h"
+#import "StopViewController.h"
 #import "Utils.h"
 #import "DataManager.h"
-#import "StopViewController.h"
+#import "TimeTableViewController.h"
 
-@interface DirectionViewController ()
+@interface StopViewController ()
 
 @end
 
-@implementation DirectionViewController
+@implementation StopViewController
 
 @synthesize route;
 
@@ -23,6 +23,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -30,8 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = [NSString stringWithFormat:@"%@ №%@", [Utils getLocalizedType:route.type], route.name];
-    contentList = [[DataManager dataManager] routesByName:route.name andType:route.type];
+        self.title = NSLocalizedString(@"STOP_VC_TITLE", nil);
+    contentList = [[DataManager dataManager] routeStops:route.routeId];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -40,7 +41,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark - Table view data source
 
@@ -55,7 +55,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"directionTableCell";
+    static NSString *CellIdentifier = @"stopTableCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -63,9 +63,8 @@
     }
     
     // Configure the cell...
-    RtRoute *rtRout = [contentList objectAtIndex:indexPath.row];
-    NSString *text = [NSString stringWithFormat:@"%@ - %@", [rtRout.from.name length] == 0 ? @"" : rtRout.from.name, [rtRout.to.name length] == 0 ? @"" : rtRout.to.name];
-    cell.textLabel.text = text;
+    RtStop *rtStop = [contentList objectAtIndex:indexPath.row];
+    cell.textLabel.text = rtStop.name;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     return cell;
@@ -74,11 +73,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RtRoute *selectedRoute = [contentList objectAtIndex:indexPath.row];
-    StopViewController  *stopVC = [[StopViewController alloc] initWithNibName:@"StopViewController" bundle:nil];
-    stopVC.route = selectedRoute;
-    [self.navigationController pushViewController:stopVC animated:YES];
-    
+    RtStop *selectedStop = [contentList objectAtIndex:indexPath.row];
+    TimeTableViewController  *ttVC = [[TimeTableViewController alloc] initWithNibName:@"TimeTableViewController" bundle:nil];
+    [self.navigationController pushViewController:ttVC animated:YES];
 }
 
 @end

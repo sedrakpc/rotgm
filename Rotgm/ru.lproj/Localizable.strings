@@ -5,8 +5,9 @@
   Created by Sedrak Dalaloyan on 3/2/14.
   Copyright (c) 2014 sedrakpc. All rights reserved.
 */
-"SEARCH_VC_TITLE" = "Поиск остановки или маршрута";
+"SEARCH_VC_TITLE" = "Поиск маршрута";
 "FAVOURITES_VC_TITLE" = "Избранное";
+"STOP_VC_TITLE" = "Выберите остановку";
 "AVTO" = "Автобус";
 "TROL" = "Троллейбус";
 "TRAM" = "Трамвай";
