@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        self.title = NSLocalizedString(@"STOP_VC_TITLE", nil);
+    self.title = NSLocalizedString(@"STOP_VC_TITLE", nil);
     contentList = [[DataManager dataManager] routeStops:route.routeId];
     // Do any additional setup after loading the view from its nib.
 }

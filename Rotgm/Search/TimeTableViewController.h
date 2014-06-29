@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TimeTableViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *backgroundLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+@property (weak, nonatomic) IBOutlet UITableView *timeTable;
+@property (weak, nonatomic) IBOutlet UIView *tableBackgroundView;
 @end

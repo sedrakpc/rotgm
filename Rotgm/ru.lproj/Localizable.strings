@@ -8,6 +8,8 @@
 "SEARCH_VC_TITLE" = "Поиск маршрута";
 "FAVOURITES_VC_TITLE" = "Избранное";
 "STOP_VC_TITLE" = "Выберите остановку";
+"TIME_TABLE_VC_TITLE" = "Расписание";
 "AVTO" = "Автобус";
 "TROL" = "Троллейбус";
 "TRAM" = "Трамвай";
+"BAS_IS_NOT_AVAILABLE" = "Автобус недоступен";

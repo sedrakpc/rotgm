@@ -8,6 +8,8 @@
 "SEARCH_VC_TITLE" = "Search";
 "FAVOURITES_VC_TITLE" = "Favourites";
 "STOP_VC_TITLE" = "Select stop";
+"TIME_TABLE_VC_TITLE" = "Schedule";
 "AVTO" = "Bus";
 "TROL" = "Trolleybus";
 "TRAM" = "Tram";
+"BAS_IS_NOT_AVAILABLE" = "Bus is not available";
