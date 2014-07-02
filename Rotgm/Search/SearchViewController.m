@@ -72,12 +72,18 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 67.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"searchTableCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SearchTableCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+
     }
     
     // Configure the cell...
@@ -88,7 +94,8 @@
     else {
         route = [contentList objectAtIndex:indexPath.row];
     }
-    cell.textLabel.text = route.name;
+    UILabel *nameText = (UILabel *)[cell viewWithTag:1];
+    nameText.text = route.name;
     return cell;
     
 }
@@ -117,6 +124,7 @@
     DirectionViewController  *directionVC = [[DirectionViewController alloc] initWithNibName:@"DirectionViewController" bundle:nil];
     directionVC.route = route;
     [self.navigationController pushViewController:directionVC animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
@@ -142,6 +150,7 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     isSearching = NO;
+    [self.serachTableView reloadData];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {

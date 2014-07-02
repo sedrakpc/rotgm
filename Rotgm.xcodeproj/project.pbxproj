@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D107D25F1918227D000D3E72 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D107D25E1918227D000D3E72 /* libsqlite3.dylib */; };
+		D128FF531964293500B6355D /* SearchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D128FF521964293500B6355D /* SearchTableCell.xib */; };
 		D134BEB518C3785B00DD994C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D134BEB318C3785B00DD994C /* Localizable.strings */; };
 		D134BEC018C3897500DD994C /* FavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D134BEBE18C3897500DD994C /* FavouritesViewController.m */; };
 		D134BEC118C3897500DD994C /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D134BEBF18C3897500DD994C /* FavouritesViewController.xib */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		D107D25E1918227D000D3E72 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D128FF521964293500B6355D /* SearchTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchTableCell.xib; path = Search/SearchTableCell.xib; sourceTree = "<group>"; };
 		D134BEB418C3785B00DD994C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D134BEB818C379E400DD994C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Util/Constants.h; sourceTree = "<group>"; };
 		D134BEB918C37A6500DD994C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				D1C874CC19605F95002DB6FB /* TimeTableViewController.h */,
 				D1C874CD19605F95002DB6FB /* TimeTableViewController.m */,
 				D1C874CE19605F95002DB6FB /* TimeTableViewController.xib */,
+				D128FF521964293500B6355D /* SearchTableCell.xib */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D128FF531964293500B6355D /* SearchTableCell.xib in Resources */,
 				D14A764118B76BC800336B5A /* Images.xcassets in Resources */,
 				D134BEC118C3897500DD994C /* FavouritesViewController.xib in Resources */,
 				D134BEB518C3785B00DD994C /* Localizable.strings in Resources */,

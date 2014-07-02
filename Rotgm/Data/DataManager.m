@@ -70,6 +70,24 @@ static DataManager *manager;
     return result;
 }
 
+-(NSArray *)routesFullList
+{
+    
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    FMResultSet *rs = [db executeQuery:@"SELECT DISTINCT [type], [name] from rt_route;"];
+    if ([db hadError]) {
+        NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
+    }
+    while ([rs next]) {
+        RtRoute *route = [[RtRoute alloc] init];
+        route.type = [rs stringForColumnIndex:0];
+        route.name = [rs stringForColumnIndex:1];
+        [result addObject:route];
+    }
+    [rs close];
+    return result;
+}
+
 -(NSArray *)routesByName:(NSString *)name andType:(NSString *) type
 {
     NSMutableArray *result = [[NSMutableArray alloc] init];
