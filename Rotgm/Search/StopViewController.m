@@ -75,6 +75,8 @@
 {
     RtStop *selectedStop = [contentList objectAtIndex:indexPath.row];
     TimeTableViewController  *ttVC = [[TimeTableViewController alloc] initWithNibName:@"TimeTableViewController" bundle:nil];
+    ttVC.route = route;
+    ttVC.stop = selectedStop;
     [self.navigationController pushViewController:ttVC animated:YES];
 }
 

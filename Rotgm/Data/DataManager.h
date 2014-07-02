@@ -18,6 +18,7 @@
 -(NSArray *)routesList;
 -(NSArray *)routesFullList;
 -(NSArray *)routeStops:(int)routeId;
+-(NSArray *)getTimeTable:(int)routeId forStop:(int)stopId dayOfWeek:(NSInteger)dayOfWeek;
 -(NSArray *)routesByName:(NSString *)name andType:(NSString *) type;
 
 @end

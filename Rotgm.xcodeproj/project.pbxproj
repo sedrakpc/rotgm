@@ -39,6 +39,7 @@
 		D1BE96451916A14400FDFFA8 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE963E1916A14400FDFFA8 /* FMDatabaseQueue.m */; };
 		D1BE96461916A14400FDFFA8 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE96411916A14400FDFFA8 /* FMResultSet.m */; };
 		D1BE964A1916DEC100FDFFA8 /* RtRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE96491916DEC100FDFFA8 /* RtRoute.m */; };
+		D1BFC23C1964A272000544D1 /* RtTime.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BFC23B1964A272000544D1 /* RtTime.m */; };
 		D1C874CF19605F95002DB6FB /* TimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C874CD19605F95002DB6FB /* TimeTableViewController.m */; };
 		D1C874D019605F95002DB6FB /* TimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C874CE19605F95002DB6FB /* TimeTableViewController.xib */; };
 /* End PBXBuildFile section */
@@ -107,6 +108,8 @@
 		D1BE96411916A14400FDFFA8 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = FMDB/FMResultSet.m; sourceTree = "<group>"; };
 		D1BE96481916DEC100FDFFA8 /* RtRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RtRoute.h; path = Model/RtRoute.h; sourceTree = "<group>"; };
 		D1BE96491916DEC100FDFFA8 /* RtRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RtRoute.m; path = Model/RtRoute.m; sourceTree = "<group>"; };
+		D1BFC23A1964A272000544D1 /* RtTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RtTime.h; path = Model/RtTime.h; sourceTree = "<group>"; };
+		D1BFC23B1964A272000544D1 /* RtTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RtTime.m; path = Model/RtTime.m; sourceTree = "<group>"; };
 		D1C874CC19605F95002DB6FB /* TimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeTableViewController.h; path = Search/TimeTableViewController.h; sourceTree = "<group>"; };
 		D1C874CD19605F95002DB6FB /* TimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeTableViewController.m; path = Search/TimeTableViewController.m; sourceTree = "<group>"; };
 		D1C874CE19605F95002DB6FB /* TimeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimeTableViewController.xib; path = Search/TimeTableViewController.xib; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				D1BE96491916DEC100FDFFA8 /* RtRoute.m */,
 				D189FC69191F9621004881CE /* RtStop.h */,
 				D189FC6A191F9621004881CE /* RtStop.m */,
+				D1BFC23A1964A272000544D1 /* RtTime.h */,
+				D1BFC23B1964A272000544D1 /* RtTime.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				D180CA011955EA0300DC2ED3 /* StopViewController.m in Sources */,
 				D1C874CF19605F95002DB6FB /* TimeTableViewController.m in Sources */,
 				D14A766318B77AD400336B5A /* SearchViewController.m in Sources */,
+				D1BFC23C1964A272000544D1 /* RtTime.m in Sources */,
 				D1BE96441916A14400FDFFA8 /* FMDatabasePool.m in Sources */,
 				D1BE96431916A14400FDFFA8 /* FMDatabaseAdditions.m in Sources */,
 				D14A763518B76BC800336B5A /* main.m in Sources */,

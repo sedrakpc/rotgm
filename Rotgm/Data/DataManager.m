@@ -10,6 +10,7 @@
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
 #import "RtRoute.h"
+#import "RtTime.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @interface DataManager()
@@ -109,6 +110,25 @@ static DataManager *manager;
         to.name = [rs stringForColumnIndex:6];
         route.to = to;
         [result addObject:route];
+    }
+    [rs close];
+    return result;
+}
+
+
+
+-(NSArray *)getTimeTable:(int)routeId forStop:(int)stopId dayOfWeek:(NSInteger)dayOfWeek
+{
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    FMResultSet *rs = [db executeQuery:@"select [route], [stop], [dates], [hour], [minute] from rt_time_table where route = ? AND stop = ? AND SUBSTR(dates, ?, 1) = \"1\"", [NSNumber numberWithInt:routeId], [NSNumber numberWithInt:stopId], [NSNumber numberWithInteger:dayOfWeek]];
+    if ([db hadError]) {
+        NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
+    }
+    while ([rs next]) {
+        RtTime *rtTime = [[RtTime alloc] init];
+        rtTime.hour = [rs intForColumnIndex:3];
+        rtTime.minute = [rs intForColumnIndex:4];
+        [result addObject:rtTime];
     }
     [rs close];
     return result;

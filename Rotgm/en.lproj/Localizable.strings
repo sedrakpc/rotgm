@@ -13,3 +13,7 @@
 "TROL" = "Trolleybus";
 "TRAM" = "Tram";
 "BAS_IS_NOT_AVAILABLE" = "Bus is not available";
+
+"TODAY" = "Today";
+"TOMORROW" = "Tomorrow";
+"DAY_OF_WEEK" = "Day of week";
