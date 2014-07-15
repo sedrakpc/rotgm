@@ -15,4 +15,5 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) RtStop *from;
 @property (nonatomic, strong) RtStop *to;
+@property (nonatomic, copy) NSString *days;
 @end

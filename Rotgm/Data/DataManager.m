@@ -57,7 +57,7 @@ static DataManager *manager;
 {
     
     NSMutableArray *result = [[NSMutableArray alloc] init];
-    FMResultSet *rs = [db executeQuery:@"SELECT DISTINCT [type], [name] from rt_route;"];
+    FMResultSet *rs = [db executeQuery:@"SELECT [type], [name], group_concat([days]) from rt_route rtr left join rt_route_details rtrd on rtr.id = rtrd.route group by [type], [name] order by [id] asc;"];
     if ([db hadError]) {
         NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
     }
@@ -65,6 +65,7 @@ static DataManager *manager;
         RtRoute *route = [[RtRoute alloc] init];
         route.type = [rs stringForColumnIndex:0];
         route.name = [rs stringForColumnIndex:1];
+        route.days = [rs stringForColumnIndex:2];
         [result addObject:route];
     }
     [rs close];
@@ -119,6 +120,7 @@ static DataManager *manager;
 
 -(NSArray *)getTimeTable:(int)routeId forStop:(int)stopId dayOfWeek:(NSInteger)dayOfWeek
 {
+    dayOfWeek = dayOfWeek != 0 ? dayOfWeek : -1;
     NSMutableArray *result = [[NSMutableArray alloc] init];
     FMResultSet *rs = [db executeQuery:@"select [route], [stop], [dates], [hour], [minute] from rt_time_table where route = ? AND stop = ? AND SUBSTR(dates, ?, 1) = \"1\"", [NSNumber numberWithInt:routeId], [NSNumber numberWithInt:stopId], [NSNumber numberWithInteger:dayOfWeek]];
     if ([db hadError]) {
@@ -131,7 +133,7 @@ static DataManager *manager;
         [result addObject:rtTime];
     }
     [rs close];
-    return result;
+    return [result sortedArrayUsingSelector:@selector(compare:)];
 }
 
 -(NSArray *)routeStops:(int)routeId {

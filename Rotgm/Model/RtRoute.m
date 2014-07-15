@@ -14,10 +14,5 @@
 @synthesize name;
 @synthesize from;
 @synthesize to;
-
-- (id)initWithId:(int)rtId
-{
-    self.routeId = rtId;
-    return self;
-}
+@synthesize days;
 @end

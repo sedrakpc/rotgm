@@ -26,12 +26,14 @@
 		D14A765418B76BC800336B5A /* RotgmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D14A765318B76BC800336B5A /* RotgmTests.m */; };
 		D14A766318B77AD400336B5A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D14A766118B77AD400336B5A /* SearchViewController.m */; };
 		D14A766418B77AD400336B5A /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D14A766218B77AD400336B5A /* SearchViewController.xib */; };
+		D15D663D1966B19E00BD3C22 /* TimeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15D663C1966B19E00BD3C22 /* TimeTableCell.xib */; };
 		D180CA011955EA0300DC2ED3 /* StopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D180C9FF1955EA0300DC2ED3 /* StopViewController.m */; };
 		D180CA021955EA0300DC2ED3 /* StopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D180CA001955EA0300DC2ED3 /* StopViewController.xib */; };
 		D189FC64191EB5AC004881CE /* DirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D189FC62191EB5AC004881CE /* DirectionViewController.m */; };
 		D189FC65191EB5AC004881CE /* DirectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D189FC63191EB5AC004881CE /* DirectionViewController.xib */; };
 		D189FC68191EBB9E004881CE /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D189FC67191EBB9E004881CE /* Utils.m */; };
 		D189FC6B191F9621004881CE /* RtStop.m in Sources */ = {isa = PBXBuildFile; fileRef = D189FC6A191F9621004881CE /* RtStop.m */; };
+		D1929A2B1969EE0B008ACD46 /* TouchableSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D1929A2A1969EE0B008ACD46 /* TouchableSegmentedControl.m */; };
 		D1BE963519169F9700FDFFA8 /* rotgm.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D1BE963419169F9700FDFFA8 /* rotgm.sqlite */; };
 		D1BE96421916A14400FDFFA8 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE96381916A14400FDFFA8 /* FMDatabase.m */; };
 		D1BE96431916A14400FDFFA8 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE963A1916A14400FDFFA8 /* FMDatabaseAdditions.m */; };
@@ -84,6 +86,7 @@
 		D14A766018B77AD400336B5A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Search/SearchViewController.h; sourceTree = "<group>"; };
 		D14A766118B77AD400336B5A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Search/SearchViewController.m; sourceTree = "<group>"; };
 		D14A766218B77AD400336B5A /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Search/SearchViewController.xib; sourceTree = "<group>"; };
+		D15D663C1966B19E00BD3C22 /* TimeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimeTableCell.xib; path = Search/TimeTableCell.xib; sourceTree = "<group>"; };
 		D180C9FE1955EA0300DC2ED3 /* StopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopViewController.h; path = Search/StopViewController.h; sourceTree = "<group>"; };
 		D180C9FF1955EA0300DC2ED3 /* StopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopViewController.m; path = Search/StopViewController.m; sourceTree = "<group>"; };
 		D180CA001955EA0300DC2ED3 /* StopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StopViewController.xib; path = Search/StopViewController.xib; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 		D189FC67191EBB9E004881CE /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Util/Utils.m; sourceTree = "<group>"; };
 		D189FC69191F9621004881CE /* RtStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RtStop.h; path = Model/RtStop.h; sourceTree = "<group>"; };
 		D189FC6A191F9621004881CE /* RtStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RtStop.m; path = Model/RtStop.m; sourceTree = "<group>"; };
+		D1929A291969EE0B008ACD46 /* TouchableSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchableSegmentedControl.h; path = Custom/TouchableSegmentedControl.h; sourceTree = "<group>"; };
+		D1929A2A1969EE0B008ACD46 /* TouchableSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchableSegmentedControl.m; path = Custom/TouchableSegmentedControl.m; sourceTree = "<group>"; };
 		D1BE963419169F9700FDFFA8 /* rotgm.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = rotgm.sqlite; sourceTree = "<group>"; };
 		D1BE96371916A14400FDFFA8 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = FMDB/FMDatabase.h; sourceTree = "<group>"; };
 		D1BE96381916A14400FDFFA8 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = FMDB/FMDatabase.m; sourceTree = "<group>"; };
@@ -246,6 +251,7 @@
 		D14A765E18B76F4800336B5A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D1929A281969ED73008ACD46 /* Custom */,
 				D1BE96471916D51700FDFFA8 /* Model */,
 				D134BEC218C5249600DD994C /* Data */,
 				D134BEBC18C3895400DD994C /* Favourites */,
@@ -271,8 +277,18 @@
 				D1C874CD19605F95002DB6FB /* TimeTableViewController.m */,
 				D1C874CE19605F95002DB6FB /* TimeTableViewController.xib */,
 				D128FF521964293500B6355D /* SearchTableCell.xib */,
+				D15D663C1966B19E00BD3C22 /* TimeTableCell.xib */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		D1929A281969ED73008ACD46 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D1929A291969EE0B008ACD46 /* TouchableSegmentedControl.h */,
+				D1929A2A1969EE0B008ACD46 /* TouchableSegmentedControl.m */,
+			);
+			name = Custom;
 			sourceTree = "<group>";
 		};
 		D1BE96361916A13000FDFFA8 /* FMDB */ = {
@@ -389,6 +405,7 @@
 				D128FF531964293500B6355D /* SearchTableCell.xib in Resources */,
 				D14A764118B76BC800336B5A /* Images.xcassets in Resources */,
 				D134BEC118C3897500DD994C /* FavouritesViewController.xib in Resources */,
+				D15D663D1966B19E00BD3C22 /* TimeTableCell.xib in Resources */,
 				D134BEB518C3785B00DD994C /* Localizable.strings in Resources */,
 				D1BE963519169F9700FDFFA8 /* rotgm.sqlite in Resources */,
 				D180CA021955EA0300DC2ED3 /* StopViewController.xib in Resources */,
@@ -413,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1929A2B1969EE0B008ACD46 /* TouchableSegmentedControl.m in Sources */,
 				D134BEC018C3897500DD994C /* FavouritesViewController.m in Sources */,
 				D189FC6B191F9621004881CE /* RtStop.m in Sources */,
 				D1BE964A1916DEC100FDFFA8 /* RtRoute.m in Sources */,

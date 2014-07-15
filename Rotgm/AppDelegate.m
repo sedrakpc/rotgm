@@ -16,6 +16,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"ru_RU", nil] forKey:@"AppleLanguages"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     //self.window.tintColor = DEFAULT_TINT_COLOR;
     //UITabBarController *tabBarController = [[UITabBarController alloc] init];
     //tabBarController.tabBar.translucent = NO;
@@ -60,6 +62,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"ru_RU", nil] forKey:@"AppleLanguages"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 

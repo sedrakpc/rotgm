@@ -73,7 +73,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 67.0;
+    return 75.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,8 +96,44 @@
     }
     UILabel *nameText = (UILabel *)[cell viewWithTag:1];
     nameText.text = route.name;
+    [self daysText:route.days];
+    UILabel *daysText = (UILabel *)[cell viewWithTag:4];
+    daysText.text = [self daysText:route.days];
     return cell;
     
+}
+
+- (NSString *)daysText:(NSString *)days {
+    NSArray *daysArray = [days componentsSeparatedByString:@","];
+    NSMutableString *daysBinaryMask = [[NSMutableString alloc] init];
+    for (int i = 0; i < 7; i++) {
+        BOOL found = false;
+        for (int j = 0; j < [daysArray count]; j++) {
+            if ([[[daysArray objectAtIndex:j] substringWithRange:NSMakeRange(i, 1)] compare:@"1"] == NSOrderedSame) {
+                [daysBinaryMask appendString:@"1"];
+                found = true;
+                break;
+            }
+        }
+        if(found) continue;
+        [daysBinaryMask appendString:@"0"];
+    }
+    NSArray *weekdays = [NSLocalizedString(@"WEEKDAYS_ARRAY", nil) componentsSeparatedByString:@","];
+    
+    if ([daysBinaryMask compare:@"1111111"] == NSOrderedSame) {
+        return NSLocalizedString(@"EVERY_DAY", nil);
+    }
+    NSMutableString *result = [[NSMutableString alloc] init];
+    for (int i = 0; i < [weekdays count]; i++) {
+        if ([[daysBinaryMask substringWithRange:NSMakeRange(i, 1)] compare:@"1"] == NSOrderedSame) {
+            [result appendString:weekdays[i]];
+            [result appendString:@", "];
+        }
+    }
+    if ([result length] > 0) {
+        [result deleteCharactersInRange:NSMakeRange([result length]-2, 1)];
+    }
+    return result;
 }
 
 - (void)searchTableList {

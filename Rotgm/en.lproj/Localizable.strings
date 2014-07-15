@@ -17,3 +17,5 @@
 "TODAY" = "Today";
 "TOMORROW" = "Tomorrow";
 "DAY_OF_WEEK" = "Day of week";
+"EVERY_DAY" = "Every day";
+"WEEKDAYS_ARRAY" = "Mo,Tu,We,Th,Fr,Sa,Su";

@@ -11,4 +11,5 @@
 @interface RtTime : NSObject
 @property (nonatomic, assign) int hour;
 @property (nonatomic, assign) int minute;
+- (NSComparisonResult)compare:(RtTime *)otherObject;
 @end
