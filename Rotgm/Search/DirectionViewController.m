@@ -17,7 +17,7 @@
 
 @implementation DirectionViewController
 
-@synthesize route;
+@synthesize bus;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,8 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = [NSString stringWithFormat:@"%@ №%@", [Utils getLocalizedType:route.type], route.name];
-    contentList = [[DataManager dataManager] routesByName:route.name andType:route.type];
+    self.title = [NSString stringWithFormat:@"%@ №%@", [Utils getLocalizedType:bus.type], bus.name];
+    contentList = bus.routes;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -78,6 +78,7 @@
     StopViewController  *stopVC = [[StopViewController alloc] initWithNibName:@"StopViewController" bundle:nil];
     stopVC.route = selectedRoute;
     [self.navigationController pushViewController:stopVC animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 

@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "RtRoute.h"
+#import "RtBus.h"
 
 @interface DirectionViewController : UIViewController
 {
     NSArray *contentList;
 }
-@property (nonatomic, retain) RtRoute *route;
+@property (nonatomic, strong) RtBus *bus;
 @property (weak, nonatomic) IBOutlet UITableView *directionTableView;
 @end

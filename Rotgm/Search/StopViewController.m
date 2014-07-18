@@ -78,6 +78,7 @@
     ttVC.route = route;
     ttVC.stop = selectedStop;
     [self.navigationController pushViewController:ttVC animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

@@ -11,6 +11,9 @@
 #import "RtRoute.h"
 #import "DataManager.h"
 #import "DirectionViewController.h"
+#import "RtBus.h"
+#import "StopViewController.h"
+#import "RouteButton.h"
 
 @interface SearchViewController ()
 
@@ -26,7 +29,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        contentList = [[DataManager dataManager] routesList];
+        contentList = [[DataManager dataManager] busList];
         filteredContentList = [[NSMutableArray alloc] initWithArray:contentList];
     }
     return self;
@@ -73,13 +76,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 75.0;
+    return 81.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"searchTableCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [serachTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SearchTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
@@ -87,20 +90,45 @@
     }
     
     // Configure the cell...
-    RtRoute *route;
+    RtBus *bus;
     if (isSearching) {
-        route = [filteredContentList objectAtIndex:indexPath.row];
+        bus = [filteredContentList objectAtIndex:indexPath.row];
     }
     else {
-        route = [contentList objectAtIndex:indexPath.row];
+        bus = [contentList objectAtIndex:indexPath.row];
     }
     UILabel *nameText = (UILabel *)[cell viewWithTag:1];
-    nameText.text = route.name;
-    [self daysText:route.days];
+    nameText.text = bus.name;
     UILabel *daysText = (UILabel *)[cell viewWithTag:4];
-    daysText.text = [self daysText:route.days];
+    daysText.text = [self daysText:bus.days];
+    if ([bus.routes count] > 0) {
+        UILabel *topLabel = (UILabel *)[cell viewWithTag:2];
+        RtRoute *rtRout = bus.routes[0];
+        NSString *text = [NSString stringWithFormat:@"%@ - %@", [rtRout.from.name length] == 0 ? @"" : rtRout.from.name, [rtRout.to.name length] == 0 ? @"" : rtRout.to.name];
+        topLabel.text = text;
+        RouteButton *topButton = (RouteButton *)[cell viewWithTag:5];
+        topButton.route = rtRout;
+        [topButton addTarget:self action:@selector(switchToRoute:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    if ([bus.routes count] > 1) {
+        UILabel *bottomLabel = (UILabel *)[cell viewWithTag:3];
+        RtRoute *rtRout = bus.routes[1];
+        NSString *text = [NSString stringWithFormat:@"%@ - %@", [rtRout.from.name length] == 0 ? @"" : rtRout.from.name, [rtRout.to.name length] == 0 ? @"" : rtRout.to.name];
+        bottomLabel.text = text;
+        RouteButton *bottomButton = (RouteButton *)[cell viewWithTag:6];
+        bottomButton.route = rtRout;
+        [bottomButton addTarget:self action:@selector(switchToRoute:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
     return cell;
     
+}
+
+- (IBAction) switchToRoute:(id)sender {
+    RouteButton *buttonClicked = (RouteButton *)sender;
+    StopViewController  *stopVC = [[StopViewController alloc] initWithNibName:@"StopViewController" bundle:nil];
+    stopVC.route = buttonClicked.route;
+    [self.navigationController pushViewController:stopVC animated:YES];
 }
 
 - (NSString *)daysText:(NSString *)days {
@@ -139,10 +167,10 @@
 - (void)searchTableList {
     NSString *searchString = searchBar.text;
     
-    for (RtRoute *tempRoute in contentList) {
-        NSComparisonResult result = [tempRoute.name compare:searchString options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchString length])];
+    for (RtBus *tempBus in contentList) {
+        NSComparisonResult result = [tempBus.name compare:searchString options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchString length])];
         if (result == NSOrderedSame) {
-            [filteredContentList addObject:tempRoute];
+            [filteredContentList addObject:tempBus];
         }
     }
 }
@@ -150,15 +178,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RtRoute *route;
+    RtBus *bus;
     if (isSearching) {
-        route = [filteredContentList objectAtIndex:indexPath.row];
+        bus = [filteredContentList objectAtIndex:indexPath.row];
     }
     else {
-        route = [contentList objectAtIndex:indexPath.row];
+        bus = [contentList objectAtIndex:indexPath.row];
     }
     DirectionViewController  *directionVC = [[DirectionViewController alloc] initWithNibName:@"DirectionViewController" bundle:nil];
-    directionVC.route = route;
+    directionVC.bus = bus;
     [self.navigationController pushViewController:directionVC animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -167,7 +195,7 @@
 #pragma mark - Search Implementation
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    isSearching = YES;
+    
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {

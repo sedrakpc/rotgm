@@ -11,6 +11,7 @@
 #import "FMDatabaseAdditions.h"
 #import "RtRoute.h"
 #import "RtTime.h"
+#import "RtBus.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @interface DataManager()
@@ -53,7 +54,7 @@ static DataManager *manager;
     return data;
 }
 
--(NSArray *)routesList
+-(NSArray *)busList
 {
     
     NSMutableArray *result = [[NSMutableArray alloc] init];
@@ -62,11 +63,12 @@ static DataManager *manager;
         NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
     }
     while ([rs next]) {
-        RtRoute *route = [[RtRoute alloc] init];
-        route.type = [rs stringForColumnIndex:0];
-        route.name = [rs stringForColumnIndex:1];
-        route.days = [rs stringForColumnIndex:2];
-        [result addObject:route];
+        RtBus *bus = [[RtBus alloc] init];
+        bus.type = [rs stringForColumnIndex:0];
+        bus.name = [rs stringForColumnIndex:1];
+        bus.days = [rs stringForColumnIndex:2];
+        bus.routes = [self routesByName:bus.name andType:bus.type];
+        [result addObject:bus];
     }
     [rs close];
     return result;

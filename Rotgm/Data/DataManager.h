@@ -15,7 +15,7 @@
 
 + (DataManager*)dataManager;
 - (NSArray *)allData;
--(NSArray *)routesList;
+-(NSArray *)busList;
 -(NSArray *)routesFullList;
 -(NSArray *)routeStops:(int)routeId;
 -(NSArray *)getTimeTable:(int)routeId forStop:(int)stopId dayOfWeek:(NSInteger)dayOfWeek;
