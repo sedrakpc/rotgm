@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D14A762418B76BC800336B5A"
                BuildableName = "Rotgm.app"
-               BlueprintName = "Rotgm"
-               ReferencedContainer = "container:Rotgm.xcodeproj">
+               BlueprintName = "Citybus"
+               ReferencedContainer = "container:Citybus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D14A764518B76BC800336B5A"
                BuildableName = "RotgmTests.xctest"
-               BlueprintName = "RotgmTests"
-               ReferencedContainer = "container:Rotgm.xcodeproj">
+               BlueprintName = "CitybusTests"
+               ReferencedContainer = "container:Citybus.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D14A762418B76BC800336B5A"
             BuildableName = "Rotgm.app"
-            BlueprintName = "Rotgm"
-            ReferencedContainer = "container:Rotgm.xcodeproj">
+            BlueprintName = "Citybus"
+            ReferencedContainer = "container:Citybus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D14A762418B76BC800336B5A"
             BuildableName = "Rotgm.app"
-            BlueprintName = "Rotgm"
-            ReferencedContainer = "container:Rotgm.xcodeproj">
+            BlueprintName = "Citybus"
+            ReferencedContainer = "container:Citybus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -86,8 +86,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D14A762418B76BC800336B5A"
             BuildableName = "Rotgm.app"
-            BlueprintName = "Rotgm"
-            ReferencedContainer = "container:Rotgm.xcodeproj">
+            BlueprintName = "Citybus"
+            ReferencedContainer = "container:Citybus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

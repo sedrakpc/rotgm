@@ -23,7 +23,7 @@
 		D14A764818B76BC800336B5A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14A764718B76BC800336B5A /* XCTest.framework */; };
 		D14A764918B76BC800336B5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14A762818B76BC800336B5A /* Foundation.framework */; };
 		D14A764A18B76BC800336B5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14A762C18B76BC800336B5A /* UIKit.framework */; };
-		D14A765418B76BC800336B5A /* RotgmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D14A765318B76BC800336B5A /* RotgmTests.m */; };
+		D14A765418B76BC800336B5A /* CitybusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D14A765318B76BC800336B5A /* CitybusTests.m */; };
 		D14A766318B77AD400336B5A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D14A766118B77AD400336B5A /* SearchViewController.m */; };
 		D14A766418B77AD400336B5A /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D14A766218B77AD400336B5A /* SearchViewController.xib */; };
 		D15C18111976A2E10071E19D /* RtBus.m in Sources */ = {isa = PBXBuildFile; fileRef = D15C18101976A2E10071E19D /* RtBus.m */; };
@@ -70,21 +70,21 @@
 		D134BEBF18C3897500DD994C /* FavouritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavouritesViewController.xib; path = Favourites/FavouritesViewController.xib; sourceTree = "<group>"; };
 		D134BEC318C524CF00DD994C /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Data/DataManager.h; sourceTree = "<group>"; };
 		D134BEC418C524CF00DD994C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Data/DataManager.m; sourceTree = "<group>"; };
-		D14A762518B76BC800336B5A /* Rotgm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rotgm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D14A762518B76BC800336B5A /* Citybus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Citybus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D14A762818B76BC800336B5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D14A762A18B76BC800336B5A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D14A762C18B76BC800336B5A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D14A763018B76BC800336B5A /* Rotgm-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rotgm-Info.plist"; sourceTree = "<group>"; };
+		D14A763018B76BC800336B5A /* Citybus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Citybus-Info.plist"; sourceTree = "<group>"; };
 		D14A763218B76BC800336B5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D14A763418B76BC800336B5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D14A763618B76BC800336B5A /* Rotgm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rotgm-Prefix.pch"; sourceTree = "<group>"; };
+		D14A763618B76BC800336B5A /* Citybus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Citybus-Prefix.pch"; sourceTree = "<group>"; };
 		D14A763718B76BC800336B5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D14A763818B76BC800336B5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D14A764018B76BC800336B5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D14A764618B76BC800336B5A /* RotgmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotgmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D14A764618B76BC800336B5A /* CitybusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitybusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D14A764718B76BC800336B5A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D14A764F18B76BC800336B5A /* RotgmTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RotgmTests-Info.plist"; sourceTree = "<group>"; };
-		D14A765318B76BC800336B5A /* RotgmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RotgmTests.m; sourceTree = "<group>"; };
+		D14A764F18B76BC800336B5A /* CitybusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CitybusTests-Info.plist"; sourceTree = "<group>"; };
+		D14A765318B76BC800336B5A /* CitybusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitybusTests.m; sourceTree = "<group>"; };
 		D14A766018B77AD400336B5A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Search/SearchViewController.h; sourceTree = "<group>"; };
 		D14A766118B77AD400336B5A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Search/SearchViewController.m; sourceTree = "<group>"; };
 		D14A766218B77AD400336B5A /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Search/SearchViewController.xib; sourceTree = "<group>"; };
@@ -183,8 +183,8 @@
 		D14A761C18B76BC800336B5A = {
 			isa = PBXGroup;
 			children = (
-				D14A762E18B76BC800336B5A /* Rotgm */,
-				D14A764D18B76BC800336B5A /* RotgmTests */,
+				D14A762E18B76BC800336B5A /* Citybus */,
+				D14A764D18B76BC800336B5A /* CitybusTests */,
 				D14A762718B76BC800336B5A /* Frameworks */,
 				D14A762618B76BC800336B5A /* Products */,
 			);
@@ -193,8 +193,8 @@
 		D14A762618B76BC800336B5A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D14A762518B76BC800336B5A /* Rotgm.app */,
-				D14A764618B76BC800336B5A /* RotgmTests.xctest */,
+				D14A762518B76BC800336B5A /* Citybus.app */,
+				D14A764618B76BC800336B5A /* CitybusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D14A762E18B76BC800336B5A /* Rotgm */ = {
+		D14A762E18B76BC800336B5A /* Citybus */ = {
 			isa = PBXGroup;
 			children = (
 				D1BE96361916A13000FDFFA8 /* FMDB */,
@@ -221,6 +221,7 @@
 				D14A764018B76BC800336B5A /* Images.xcassets */,
 				D14A762F18B76BC800336B5A /* Supporting Files */,
 			);
+			name = Citybus;
 			path = Rotgm;
 			sourceTree = "<group>";
 		};
@@ -229,27 +230,28 @@
 			children = (
 				D1BE963419169F9700FDFFA8 /* rotgm.sqlite */,
 				D134BEB318C3785B00DD994C /* Localizable.strings */,
-				D14A763018B76BC800336B5A /* Rotgm-Info.plist */,
+				D14A763018B76BC800336B5A /* Citybus-Info.plist */,
 				D14A763118B76BC800336B5A /* InfoPlist.strings */,
 				D14A763418B76BC800336B5A /* main.m */,
-				D14A763618B76BC800336B5A /* Rotgm-Prefix.pch */,
+				D14A763618B76BC800336B5A /* Citybus-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D14A764D18B76BC800336B5A /* RotgmTests */ = {
+		D14A764D18B76BC800336B5A /* CitybusTests */ = {
 			isa = PBXGroup;
 			children = (
-				D14A765318B76BC800336B5A /* RotgmTests.m */,
+				D14A765318B76BC800336B5A /* CitybusTests.m */,
 				D14A764E18B76BC800336B5A /* Supporting Files */,
 			);
+			name = CitybusTests;
 			path = RotgmTests;
 			sourceTree = "<group>";
 		};
 		D14A764E18B76BC800336B5A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D14A764F18B76BC800336B5A /* RotgmTests-Info.plist */,
+				D14A764F18B76BC800336B5A /* CitybusTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -335,9 +337,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D14A762418B76BC800336B5A /* Rotgm */ = {
+		D14A762418B76BC800336B5A /* Citybus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D14A765718B76BC800336B5A /* Build configuration list for PBXNativeTarget "Rotgm" */;
+			buildConfigurationList = D14A765718B76BC800336B5A /* Build configuration list for PBXNativeTarget "Citybus" */;
 			buildPhases = (
 				D14A762118B76BC800336B5A /* Sources */,
 				D14A762218B76BC800336B5A /* Frameworks */,
@@ -347,14 +349,14 @@
 			);
 			dependencies = (
 			);
-			name = Rotgm;
+			name = Citybus;
 			productName = Rotgm;
-			productReference = D14A762518B76BC800336B5A /* Rotgm.app */;
+			productReference = D14A762518B76BC800336B5A /* Citybus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D14A764518B76BC800336B5A /* RotgmTests */ = {
+		D14A764518B76BC800336B5A /* CitybusTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D14A765A18B76BC800336B5A /* Build configuration list for PBXNativeTarget "RotgmTests" */;
+			buildConfigurationList = D14A765A18B76BC800336B5A /* Build configuration list for PBXNativeTarget "CitybusTests" */;
 			buildPhases = (
 				D14A764218B76BC800336B5A /* Sources */,
 				D14A764318B76BC800336B5A /* Frameworks */,
@@ -365,9 +367,9 @@
 			dependencies = (
 				D14A764C18B76BC800336B5A /* PBXTargetDependency */,
 			);
-			name = RotgmTests;
+			name = CitybusTests;
 			productName = RotgmTests;
-			productReference = D14A764618B76BC800336B5A /* RotgmTests.xctest */;
+			productReference = D14A764618B76BC800336B5A /* CitybusTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -387,7 +389,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D14A762018B76BC800336B5A /* Build configuration list for PBXProject "Rotgm" */;
+			buildConfigurationList = D14A762018B76BC800336B5A /* Build configuration list for PBXProject "Citybus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -401,8 +403,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D14A762418B76BC800336B5A /* Rotgm */,
-				D14A764518B76BC800336B5A /* RotgmTests */,
+				D14A762418B76BC800336B5A /* Citybus */,
+				D14A764518B76BC800336B5A /* CitybusTests */,
 			);
 		};
 /* End PBXProject section */
@@ -467,7 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D14A765418B76BC800336B5A /* RotgmTests.m in Sources */,
+				D14A765418B76BC800336B5A /* CitybusTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +478,7 @@
 /* Begin PBXTargetDependency section */
 		D14A764C18B76BC800336B5A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D14A762418B76BC800336B5A /* Rotgm */;
+			target = D14A762418B76BC800336B5A /* Citybus */;
 			targetProxy = D14A764B18B76BC800336B5A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -583,13 +585,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sedrak Dalaloyan (G4H9JU567V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Rotgm/Rotgm-Prefix.pch";
-				INFOPLIST_FILE = "Rotgm/Rotgm-Info.plist";
+				GCC_PREFIX_HEADER = "Rotgm/Citybus-Prefix.pch";
+				INFOPLIST_FILE = "Rotgm/Citybus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8836A00E-7B4E-44C1-97F1-3A748EBD4204";
+				PRODUCT_NAME = Citybus;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -600,13 +602,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sedrak Dalaloyan (G4H9JU567V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Rotgm/Rotgm-Prefix.pch";
-				INFOPLIST_FILE = "Rotgm/Rotgm-Info.plist";
+				GCC_PREFIX_HEADER = "Rotgm/Citybus-Prefix.pch";
+				INFOPLIST_FILE = "Rotgm/Citybus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8836A00E-7B4E-44C1-97F1-3A748EBD4204";
+				PRODUCT_NAME = Citybus;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -626,8 +628,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "RotgmTests/RotgmTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "RotgmTests/CitybusTests-Info.plist";
+				PRODUCT_NAME = CitybusTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -644,8 +646,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rotgm/Rotgm-Prefix.pch";
-				INFOPLIST_FILE = "RotgmTests/RotgmTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "RotgmTests/CitybusTests-Info.plist";
+				PRODUCT_NAME = CitybusTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -654,7 +656,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D14A762018B76BC800336B5A /* Build configuration list for PBXProject "Rotgm" */ = {
+		D14A762018B76BC800336B5A /* Build configuration list for PBXProject "Citybus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D14A765518B76BC800336B5A /* Debug */,
@@ -663,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D14A765718B76BC800336B5A /* Build configuration list for PBXNativeTarget "Rotgm" */ = {
+		D14A765718B76BC800336B5A /* Build configuration list for PBXNativeTarget "Citybus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D14A765818B76BC800336B5A /* Debug */,
@@ -672,7 +674,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D14A765A18B76BC800336B5A /* Build configuration list for PBXNativeTarget "RotgmTests" */ = {
+		D14A765A18B76BC800336B5A /* Build configuration list for PBXNativeTarget "CitybusTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D14A765B18B76BC800336B5A /* Debug */,
