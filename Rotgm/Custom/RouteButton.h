@@ -1,6 +1,6 @@
 //
 //  RouteButton.h
-//  Rotgm
+//  Citybus
 //
 //  Created by Sedrak Dalaloyan on 7/18/14.
 //  Copyright (c) 2014 sedrakpc. All rights reserved.

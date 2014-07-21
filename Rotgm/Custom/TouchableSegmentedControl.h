@@ -1,6 +1,6 @@
 //
 //  TouchableSegmentedControl.h
-//  Rotgm
+//  Citybus
 //
 //  Created by Sedrak Dalaloyan on 7/7/14.
 //  Copyright (c) 2014 sedrakpc. All rights reserved.

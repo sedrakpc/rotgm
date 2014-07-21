@@ -1,6 +1,6 @@
 //
 //  RtRoute.m
-//  Rotgm
+//  Citybus
 //
 //  Created by Sedrak Dalaloyan on 5/5/14.
 //  Copyright (c) 2014 sedrakpc. All rights reserved.

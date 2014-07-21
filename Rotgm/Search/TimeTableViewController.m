@@ -1,6 +1,6 @@
 //
 //  TimeTableViewController.m
-//  Rotgm
+//  Citybus
 //
 //  Created by Sedrak Dalaloyan on 6/29/14.
 //  Copyright (c) 2014 sedrakpc. All rights reserved.
@@ -17,7 +17,6 @@
 
 @implementation TimeTableViewController
 
-@synthesize tableBackgroundView;
 @synthesize segmentControl;
 @synthesize timeTable;
 @synthesize backgroundLabel;
@@ -52,9 +51,10 @@
     NSDateComponents *comps = [gregorian components:NSWeekdayCalendarUnit fromDate:[[NSDate date] dateByAddingTimeInterval:-5*60*60]];
     NSInteger weekday = [comps weekday] - 1;
     contentList = [[DataManager dataManager] getTimeTable:route.routeId forStop:stop.stopId dayOfWeek:weekday];
-    if ([contentList count] == 0) {
-        [timeTable setBackgroundView:tableBackgroundView];
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadTableData)
+                                                 name:@"reloadTableData"
+                                               object:nil];
     
     pickerViewTextField = [[UITextField alloc] initWithFrame:CGRectZero];
     [self.view addSubview:pickerViewTextField];
@@ -189,7 +189,15 @@
     NSDateComponents *comps = [gregorian components:NSWeekdayCalendarUnit fromDate:[dateFormatter dateFromString:selectedDayOfWeek]];
     NSInteger weekday = [comps weekday] - 1;
     contentList = [[DataManager dataManager] getTimeTable:route.routeId forStop:stop.stopId dayOfWeek:weekday];
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"reloadTableData"
+     object:self];
+}
+
+-(void)reloadTableData{
     [timeTable reloadData];
+    NSIndexSet * sections = [NSIndexSet indexSetWithIndex:0];
+    [timeTable reloadSections:sections withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - segment controll
@@ -219,7 +227,9 @@
     } else {
         [timeTable setHidden:NO];
     }
-    [timeTable reloadData];
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"reloadTableData"
+     object:self];
     if(segmentControl.selectedSegmentIndex == 0)
     {
         [self scrollToCurrentTIme];
@@ -248,4 +258,9 @@
 {
     // perform some action
 }
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 @end

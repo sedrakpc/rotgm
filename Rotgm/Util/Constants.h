@@ -1,13 +1,13 @@
 //
 //  Constants.h
-//  Rotgm
+//  Citybus
 //
 //  Created by Sedrak Dalaloyan on 3/2/14.
 //  Copyright (c) 2014 sedrakpc. All rights reserved.
 //
 
-#ifndef Rotgm_Constants_h
-#define Rotgm_Constants_h
+#ifndef Citybus_Constants_h
+#define Citybus_Constants_h
 
 #define NSLocalizedString(key, comment) \
 [[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:nil]

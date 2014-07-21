@@ -1,6 +1,6 @@
 //
-//  RotgmTests.m
-//  RotgmTests
+//  CitybusTests.m
+//  CitybusTests
 //
 //  Created by Sedrak Dalaloyan on 2/21/14.
 //  Copyright (c) 2014 sedrakpc. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface RotgmTests : XCTestCase
+@interface CitybusTests : XCTestCase
 
 @end
 
-@implementation RotgmTests
+@implementation CitybusTests
 
 - (void)setUp
 {

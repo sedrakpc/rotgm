@@ -1,6 +1,6 @@
 //
 //  TimeTableViewController.h
-//  Rotgm
+//  Citybus
 //
 //  Created by Sedrak Dalaloyan on 6/29/14.
 //  Copyright (c) 2014 sedrakpc. All rights reserved.
@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *backgroundLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UITableView *timeTable;
-@property (weak, nonatomic) IBOutlet UIView *tableBackgroundView;
 @property (strong, nonatomic) IBOutlet UIPickerView *dayPickerView;
 @property (nonatomic, strong) UITextField *pickerViewTextField;
 @end

@@ -616,7 +616,7 @@
 		D14A765B18B76BC800336B5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rotgm.app/Rotgm";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Citybus.app/Rotgm";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -638,7 +638,7 @@
 		D14A765C18B76BC800336B5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rotgm.app/Rotgm";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Citybus.app/Rotgm";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
