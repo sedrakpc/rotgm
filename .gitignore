@@ -1,5 +1,9 @@
-.idea/
+ios/.idea/
 
-Rotgm/rotgm.sqlite
+ios/Rotgm/rotgm.sqlite
 
-Rotgm/rotgm1.sqlite
+ios/Rotgm/rotgm1.sqlite
+
+ios/Citybus.xcodeproj/xcuserdata/sedrakpc.xcuserdatad/
+
+ios/Citybus.xcodeproj/project.xcworkspace/xcuserdata/

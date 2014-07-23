@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A95E6E09-5E5A-4382-AC80-AD61BC73259D</string>
+	<string>0E879A91-9A5C-492D-AD39-4F464DBC795F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Citybus</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/sedrakpc/rotgm.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Citybus.xcodeproj/project.xcworkspace</string>
+	<string>ios/Citybus.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>580572E3-147A-4F69-9338-B013DB66963B</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/sedrakpc/rotgm.git</string>
