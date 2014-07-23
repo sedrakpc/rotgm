@@ -11,6 +11,8 @@
 @interface SearchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
     NSArray *contentList;
+    NSArray *sections;
+    NSArray *cellColors;
     NSMutableArray *filteredContentList;
     BOOL isSearching;
 }

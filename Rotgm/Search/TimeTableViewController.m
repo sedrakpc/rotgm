@@ -195,9 +195,12 @@
 }
 
 -(void)reloadTableData{
-    [timeTable reloadData];
-    NSIndexSet * sections = [NSIndexSet indexSetWithIndex:0];
-    [timeTable reloadSections:sections withRowAnimation:UITableViewRowAnimationNone];
+    [timeTable performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    /*[[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+        [timeTable reloadData];
+        NSIndexSet * sections = [NSIndexSet indexSetWithIndex:0];
+        [timeTable reloadSections:sections withRowAnimation:UITableViewRowAnimationNone];
+    }];*/
 }
 
 #pragma mark - segment controll

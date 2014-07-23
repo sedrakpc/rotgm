@@ -12,6 +12,9 @@
 "AVTO" = "Bus";
 "TROL" = "Trolleybus";
 "TRAM" = "Tram";
+"BUSES" = "Buses";
+"TROLES" = "Trolleybuses";
+"TRAMS" = "Trams";
 "BAS_IS_NOT_AVAILABLE" = "Bus is not available";
 
 "TODAY" = "Today";

@@ -20,4 +20,15 @@
     }
     return nil;
 }
++(NSString *) getLocalizedTypePlural:(NSString*)type
+{
+    if([type isEqualToString:@"avto"]) {
+        return NSLocalizedString(@"BUSES", nil);
+    } else if([type isEqualToString:@"trol"]) {
+        return NSLocalizedString(@"TROLES", nil);
+    } else if([type isEqualToString:@"tram"]) {
+        return NSLocalizedString(@"TRAMS", nil);
+    }
+    return nil;
+}
 @end

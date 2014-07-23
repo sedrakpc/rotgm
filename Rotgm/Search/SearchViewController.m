@@ -14,6 +14,7 @@
 #import "RtBus.h"
 #import "StopViewController.h"
 #import "RouteButton.h"
+#import "Utils.h"
 
 @interface SearchViewController ()
 
@@ -29,7 +30,22 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        contentList = [[DataManager dataManager] busList];
+        sections = @[@"avto", @"trol", @"tram" ];
+        cellColors = @[ UIColorFromRGB(0x00AA00), UIColorFromRGB(0x0095FF), UIColorFromRGB(0xFF5043) ];
+        NSArray *allList = [[DataManager dataManager] busList];
+        NSMutableArray *busList = [[NSMutableArray alloc] init];
+        NSMutableArray *tramList = [[NSMutableArray alloc] init];
+        NSMutableArray *trolList = [[NSMutableArray alloc] init];
+        for (RtBus *bus in allList) {
+            if ([bus.type caseInsensitiveCompare:sections[0]] == NSOrderedSame) {
+                [busList addObject:bus];
+            } else if ([bus.type caseInsensitiveCompare:sections[1]] == NSOrderedSame) {
+                [trolList addObject:bus];
+            }  else if ([bus.type caseInsensitiveCompare:sections[2]] == NSOrderedSame) {
+                [tramList addObject:bus];
+            }
+        }
+        contentList = @[ busList, trolList, tramList];
         filteredContentList = [[NSMutableArray alloc] initWithArray:contentList];
     }
     return self;
@@ -62,16 +78,16 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     // Return the number of sections.
-    return 1;
+    return [sections count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     if (isSearching) {
-        return [filteredContentList count];
+        return [filteredContentList[section] count];
     }
     else {
-        return [contentList count];
+        return [contentList[section] count];
     }
 }
 
@@ -92,13 +108,14 @@
     // Configure the cell...
     RtBus *bus;
     if (isSearching) {
-        bus = [filteredContentList objectAtIndex:indexPath.row];
+        bus = [filteredContentList[indexPath.section] objectAtIndex:indexPath.row];
     }
     else {
-        bus = [contentList objectAtIndex:indexPath.row];
+        bus = [contentList[indexPath.section] objectAtIndex:indexPath.row];
     }
     UILabel *nameText = (UILabel *)[cell viewWithTag:1];
     nameText.text = bus.name;
+    nameText.textColor = cellColors[indexPath.section];
     UILabel *daysText = (UILabel *)[cell viewWithTag:4];
     daysText.text = [self daysText:bus.days];
     if ([bus.routes count] > 0) {
@@ -122,6 +139,11 @@
     
     return cell;
     
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"   %@", [Utils getLocalizedTypePlural:sections[section]] ];
 }
 
 - (IBAction) switchToRoute:(id)sender {
@@ -167,10 +189,17 @@
 - (void)searchTableList {
     NSString *searchString = searchBar.text;
     
-    for (RtBus *tempBus in contentList) {
-        NSComparisonResult result = [tempBus.name compare:searchString options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchString length])];
-        if (result == NSOrderedSame) {
-            [filteredContentList addObject:tempBus];
+    [filteredContentList removeAllObjects];
+    NSMutableArray *busList = [[NSMutableArray alloc] init];
+    NSMutableArray *tramList = [[NSMutableArray alloc] init];
+    NSMutableArray *trolList = [[NSMutableArray alloc] init];
+    [filteredContentList addObjectsFromArray:@[ busList, trolList, tramList]];
+    for (int i = 0; i < [contentList count]; ++i) {
+        for (RtBus *tempBus in contentList[i]) {
+            NSComparisonResult result = [tempBus.name compare:searchString options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchString length])];
+            if (result == NSOrderedSame) {
+                [filteredContentList[i] addObject:tempBus];
+            }
         }
     }
 }
@@ -180,10 +209,10 @@
 {
     RtBus *bus;
     if (isSearching) {
-        bus = [filteredContentList objectAtIndex:indexPath.row];
+        bus = [filteredContentList[indexPath.section] objectAtIndex:indexPath.row];
     }
     else {
-        bus = [contentList objectAtIndex:indexPath.row];
+        bus = [contentList[indexPath.section] objectAtIndex:indexPath.row];
     }
     DirectionViewController  *directionVC = [[DirectionViewController alloc] initWithNibName:@"DirectionViewController" bundle:nil];
     directionVC.bus = bus;

@@ -10,4 +10,5 @@
 
 @interface Utils : NSObject
 +(NSString *) getLocalizedType:(NSString*)type;
++(NSString *) getLocalizedTypePlural:(NSString*)type;
 @end
