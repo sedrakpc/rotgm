@@ -18,4 +18,8 @@
 
 #define LIGHT_GRAY_COLOR [UIColor colorWithRed:170.0/255.0 green:170.0/255.0 blue:170.0/255.0 alpha:1.0]
 
+#define NSNULL_IF_NIL(x) x == nil ? [NSNull null] : x
+
+#define SERVER_BASE_URL @"http://5.9.96.245:9000/timetable/route"
+
 #endif

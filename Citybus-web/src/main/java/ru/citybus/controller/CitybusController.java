@@ -1,10 +1,15 @@
 package ru.citybus.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import ru.citybus.dao.CitybusDaoImpl;
 import ru.citybus.model.TimeTable;
+
+import java.util.List;
 
 /**
  * User: sedrakpc
@@ -13,15 +18,15 @@ import ru.citybus.model.TimeTable;
  */
 @Controller
 @RequestMapping("timetable")
-public class HelloWorldController {
+public class CitybusController {
+
+    @Autowired
+    private CitybusDaoImpl citybusDao;
 
     @RequestMapping(value = "/route", headers="Accept=application/json", method=RequestMethod.GET)
     public @ResponseBody
-    TimeTable hello() {
-        TimeTable tt = new TimeTable();
-        tt.setDates("1100110");
-        tt.setHour(5);
-        tt.setMinute(21);
-        return tt;
+    List<TimeTable> getTimeTable(@RequestParam("type") String type, @RequestParam("name") String name) {
+        List<TimeTable> timeTableList = citybusDao.getTimeTable(type, name);
+        return timeTableList;
     }
 }

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "RtRoute.h"
+#import "MBProgressHUD.h"
 
 @interface StopViewController : UIViewController {
+        MBProgressHUD *HUD;
         NSArray *contentList;
 }
 @property (weak, nonatomic) IBOutlet UITableView *stopTableView;

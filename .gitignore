@@ -1,8 +1,8 @@
-ios/.idea/
+*/.idea/
 
-ios/Rotgm/rotgm.sqlite
+*.iml
 
-ios/Rotgm/rotgm1.sqlite
+Citybus-web/target/
 
 ios/Citybus.xcodeproj/xcuserdata/sedrakpc.xcuserdatad/
 

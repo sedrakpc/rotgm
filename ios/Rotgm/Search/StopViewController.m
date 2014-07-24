@@ -10,6 +10,8 @@
 #import "Utils.h"
 #import "DataManager.h"
 #import "TimeTableViewController.h"
+#import "AFNetworking.h"
+#include "Constants.h"
 
 @interface StopViewController ()
 
@@ -74,11 +76,49 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RtStop *selectedStop = [contentList objectAtIndex:indexPath.row];
+    if([[DataManager dataManager] isTimeTableExists:route.type andName:route.name]) {
+        [self switchToTimeTableVC:selectedStop];
+    } else {
+        [self downloadTimeTable:selectedStop];
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)downloadTimeTable:(RtStop*) stop {
+    [self showHudWithLabel:NSLocalizedString(@"LOADING", nil)];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?type=%@&name=%@", SERVER_BASE_URL, route.type, [route.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray* jsonFromData = (NSArray*)responseObject;
+        if(jsonFromData != nil) {
+            [[DataManager dataManager] insertTimetable:jsonFromData];
+        }
+        [HUD hide:YES];
+        [self switchToTimeTableVC:stop];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        [HUD hide:YES];
+    }];
+    [[NSOperationQueue mainQueue] addOperation:op];
+}
+
+-(void)switchToTimeTableVC:(RtStop*) stop
+{
     TimeTableViewController  *ttVC = [[TimeTableViewController alloc] initWithNibName:@"TimeTableViewController" bundle:nil];
     ttVC.route = route;
-    ttVC.stop = selectedStop;
+    ttVC.stop = stop;
     [self.navigationController pushViewController:ttVC animated:YES];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)showHudWithLabel:(NSString*)label {
+	
+	HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	[self.navigationController.view addSubview:HUD];
+	HUD.labelText = label;
+	[HUD show:YES];
 }
 
 @end

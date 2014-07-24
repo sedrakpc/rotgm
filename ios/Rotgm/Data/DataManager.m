@@ -12,6 +12,7 @@
 #import "RtRoute.h"
 #import "RtTime.h"
 #import "RtBus.h"
+#import "Constants.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @interface DataManager()
@@ -35,7 +36,17 @@ static DataManager *manager;
 {
     if (self = [super init])
     {
-        NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"rotgm" ofType:@"sqlite"];
+        
+        NSString *bundledDbPath = [[NSBundle mainBundle] pathForResource:@"rotgm" ofType:@"sqlite"];
+        NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *docsDir = [dirPaths objectAtIndex:0];
+        NSString *dbPath = [docsDir stringByAppendingPathComponent:@"rotgm.sqlite"];
+        BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dbPath];
+        if (!fileExists) {
+            [[NSFileManager defaultManager] copyItemAtPath:bundledDbPath
+                                                toPath:dbPath
+                                                 error:nil];
+        }
         //NSFileManager *fileMng = [NSFileManager defaultManager];
         
         db = [FMDatabase databaseWithPath:dbPath];
@@ -152,6 +163,27 @@ static DataManager *manager;
     }
     [rs close];
     return result;
+}
+
+-(BOOL)isTimeTableExists:(NSString*)type andName:(NSString*)name
+{
+    NSUInteger count = [db intForQuery:@"select * from rt_time_table where route in (select id from rt_route where type = ? and name = ?);", type, name];
+    return count > 0;
+}
+
+-(void)insertTimetable:(NSArray*)timeTable
+{
+    [db beginTransaction];
+    for (NSDictionary* timeTableItem in timeTable) {
+        [db executeUpdate:@"insert into rt_time_table ([route], [stop], [dates], [hour], [minute]) values (?, ?, ?, ?, ?);" , timeTableItem[@"route"], timeTableItem[@"stop"], NSNULL_IF_NIL(timeTableItem[@"dates"]), timeTableItem[@"hour"], timeTableItem[@"minute"]];
+        if ([db hadError]) {
+            NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
+            [db rollback];
+            return;
+        }
+    }
+    [db commit];
+
 }
 
 @end
