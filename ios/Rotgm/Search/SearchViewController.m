@@ -78,7 +78,14 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     // Return the number of sections.
-    return [sections count];
+    int sectionsCount = 0;
+    for (int i = 0; i < [sections count]; ++i) {
+        NSArray *list = isSearching ? filteredContentList[i] : contentList[i];
+        if(list.count >0) {
+            ++sectionsCount;
+        }
+    }
+    return sectionsCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

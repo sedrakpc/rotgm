@@ -38,7 +38,7 @@ static DataManager *manager;
     {
         
         NSString *bundledDbPath = [[NSBundle mainBundle] pathForResource:@"rotgm" ofType:@"sqlite"];
-        NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         NSString *docsDir = [dirPaths objectAtIndex:0];
         NSString *dbPath = [docsDir stringByAppendingPathComponent:@"rotgm.sqlite"];
         BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:dbPath];
@@ -46,6 +46,12 @@ static DataManager *manager;
             [[NSFileManager defaultManager] copyItemAtPath:bundledDbPath
                                                 toPath:dbPath
                                                  error:nil];
+            NSError *error = nil;
+            BOOL success = [[NSURL fileURLWithPath:dbPath] setResourceValue:[NSNumber numberWithBool: YES]
+                                          forKey: NSURLIsExcludedFromBackupKey error: &error];
+            if(!success){
+                NSLog(@"Error excluding %@ from backup %@", [[NSURL URLWithString:dbPath] lastPathComponent], error);
+            }
         }
         //NSFileManager *fileMng = [NSFileManager defaultManager];
         

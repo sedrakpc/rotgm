@@ -101,6 +101,12 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         [HUD hide:YES];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"NO_NETWORK_CONNECTION", nil)
+                                                        message:NSLocalizedString(@"NO_NETWORK_CONNECTION_BODY", nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }];
     [[NSOperationQueue mainQueue] addOperation:op];
 }
