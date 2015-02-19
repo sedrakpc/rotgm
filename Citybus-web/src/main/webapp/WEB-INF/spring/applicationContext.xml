@@ -9,7 +9,7 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close" lazy-init="true">
         <property name="driverClassName" value="org.sqlite.JDBC" />
-        <property name="url" value="jdbc:sqlite:/Users/sedrakpc/Documents/workspace/MosgortransCrowler/src/db/rotgm.sqlite" />
+        <property name="url" value="/src/db/rotgm.sqlite" />
         <property name="initialSize" value="2" />
         <property name="maxActive" value="20" />
         <property name="maxIdle" value="5" />
